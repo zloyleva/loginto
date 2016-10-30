@@ -1,0 +1,8 @@
+<h1>View your profile</h1>
+
+<% if current_user %>
+  Welcome, <%= current_user.name %>!
+  <%= image_tag(current_user.image, width: '50', heigth: '50') %></br>
+  You are logged with: <%= current_user.provider.capitalize %></br>
+  <%= link_to "Sign Out", signout_path, method: :delete %>
+<% end %>
