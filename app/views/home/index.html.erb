@@ -1,10 +1,7 @@
+<% if current_user %>
+  Welcome, <%= current_user.name %>!   <%= link_to "Sign Out", signout_path, method: :delete %>
+<% end %>
 <h1>Welcome into my blog</h1>
 <p>You can sign in with:</p>
 
-<div id="user_nav">
-  <% if current_user %>
-    Welcome, <%= current_user.name %>! You are logged with: <%= current_user.provider.capitalize %> <%= link_to "Sign Out", signout_path, method: :delete %>
-  <% else %>
-    <%= link_to "Sign in with Facebook", "/auth/facebook" %> | <%= link_to "Sign in with GitHub", "/auth/github" %>
-  <% end %>
-</div>
+<%= link_to "Sign in with Facebook", "/auth/facebook" %> | <%= link_to "Sign in with GitHub", "/auth/github" %>
